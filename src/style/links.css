@@ -1,0 +1,96 @@
+#portfolio {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.tile-wrapper {
+  width: 100%;
+}
+
+.tile {
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px #999,
+    -10px -10px 15px #fff;
+  margin: 1.5em;
+  padding: 1em;
+  height: 5em;
+}
+
+.img {
+  height: 5em;
+  width: 100%;
+  padding: 0.5em;
+}
+
+.img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e5e5e5;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #e5e5e5;
+  width: 100%;
+  padding: 0.5em;
+}
+
+.info-desc {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 25em;
+}
+
+@media screen and (max-width: 1920px) {
+  .tile-wrapper {
+    width: 33.33%;
+  }  
+  #portfolio {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .tile-wrapper {
+    width: 50%;
+  }  
+  .info-desc {
+    width: 15em;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  #portfolio {
+    flex-wrap: wrap;
+  }
+  .tile-wrapper {
+    width: 100%;
+  }  
+  .tile {
+    margin: 0.8em;
+  }
+}
+
+@media screen and (max-width: 1024) {
+  .info-desc {
+    width: 15em;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .img-wrapper {
+    display: none;
+  }
+
+  .info-desc {
+    width: 15em;
+  }
+}
