@@ -51,6 +51,10 @@
 }
 
 .info-desc {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 10em;
   flex: 0 0 100%;
 }
 
