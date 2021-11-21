@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import portfolio from '../data/links.json'
 import '../style/links.css'
 const axios = require('axios');
 
@@ -8,9 +7,15 @@ const Links = () => {
   const [portfolioLinks, setPortfolioLinks] = useState([])
   
   useEffect(() => {
-    portfolio.data.forEach(email => {
-      getLink(email)
-    });
+    axios.get('https://raw.githubusercontent.com/justinbalaguer/devsportfolio/main/links.json')
+    .then((response) => {
+      response.data.data.forEach(email => {
+        getLink(email)
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+    })
   }, [])
 
   const shuffleArray = (arr) => {

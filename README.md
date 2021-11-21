@@ -4,7 +4,7 @@ Find inspiration or just simply browse and show off your portfolio.
 
 ## For Contributors 🧑‍💻👩‍💻
 ### Pull Requests [Add Portfolio]
-- edit `src/data/links.json` and add your portfolio link. (e.g "https://justinbalaguer.github.io/")
+- edit `links.json` in the root directory and add your portfolio link. (e.g "https://justinbalaguer.github.io/")
 ##### note: make sure the commas ( , ) are corret. If writing at the bottom add a comma at the top
 ### Pull Requests [Improve website]
 - don't be shy, open a pull request to make this repository awesome. 😉
