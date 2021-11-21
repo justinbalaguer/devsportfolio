@@ -18,11 +18,13 @@
   margin: 1.5em;
   padding: 1em;
   height: 5em;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;;
 }
 
 .img {
-  height: 5em;
-  width: 100%;
+  max-width: 100%;
   padding: 0.5em;
 }
 
@@ -31,22 +33,25 @@
   justify-content: center;
   align-items: center;
   background-color: #e5e5e5;
+  flex: 0 0 50px;
 }
 
 .info {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-flow: row wrap;
+  justify-content: flex-start;
   background-color: #e5e5e5;
-  width: 100%;
   padding: 0.5em;
+  flex: 0 0 calc(100% - 50px);
+}
+
+.info a {
+  flex: 0 0 100%;
+  display: table;
 }
 
 .info-desc {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  width: 25em;
+  flex: 0 0 100%;
 }
 
 @media screen and (max-width: 1920px) {
