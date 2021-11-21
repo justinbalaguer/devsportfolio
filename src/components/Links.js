@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 import portfolio from '../data/links.json'
-import { getLinkPreview } from "link-preview-js";
 import '../style/links.css'
+const axios = require('axios');
 
 const Links = () => {
 
   const [portfolioLinks, setPortfolioLinks] = useState([])
   
   useEffect(() => {
-    portfolio.data.forEach(element => {
-      getLink(element)
+    portfolio.data.forEach(email => {
+      getLink(email)
     });
   }, [])
 
@@ -17,9 +17,17 @@ const Links = () => {
     return arr.sort(() => Math.random() - 0.5);
   }
 
-  const getLink = async(e) => {
-    await getLinkPreview(e).then((data) => {
-      setPortfolioLinks(prev => {return[...prev, data]})
+  const getLink = async(email) => {
+    await axios.get('https://devsportfolio-api.vercel.app/', {
+      params: {
+        email
+      }
+    })
+    .then((response) => {
+      setPortfolioLinks(prev => {return[...prev, response.data.message]})
+    })
+    .catch((error) => {
+      console.log(error);
     })
   }
 
